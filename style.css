@@ -1,133 +1,89 @@
-/* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+/* Importing a modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {
-    font-family: 'Montserrat', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
-    color: #f4f4f4;
-    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
-    color: white;
-}
-
-header .header-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 0 0 20px 20px;
-}
-
-header h1 {
-    font-size: 2.8rem;
-    margin-top: 15px;
-    text-shadow: 2px 2px 5px #000;
-}
-
-header p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-shadow: 1px 1px 3px #000;
-}
-
-/* Form Container */
-.form-container {
+/* Background settings */
+body {
+    background: url('https://raw.githubusercontent.com/IvyNjenga12/Ivy668325/main/Background.jpg') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+}
+
+/* Styling the form container */
+.container {
+    background: white;
     padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
 }
 
-form {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    animation: fadeIn 1s ease-in-out;
+/* Form input styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-label {
-    display: block;
+.form-group label {
     font-weight: 600;
-    margin: 10px 0;
+    display: block;
+    margin-bottom: 5px;
     color: #333;
 }
 
-.input-group {
-    margin-bottom: 20px;
-}
-
-input {
+.form-group input {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 16px;
     transition: 0.3s;
 }
 
-input:focus {
-    border-color: #6c63ff;
+.form-group input:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 5px rgba(106, 90, 205, 0.5);
     outline: none;
-    box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
 }
 
-button {
-    background: linear-gradient(45deg, #6c63ff, #3c3b93);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-button:hover {
-    background: linear-gradient(45deg, #3c3b93, #6c63ff);
-    transform: translateY(-3px);
-}
-
-/* Error and Success Messages */
+/* Error and success styles */
 .error {
-    color: red;
-    font-size: 0.85rem;
+    color: #ff4d4d;
+    font-size: 12px;
     margin-top: 5px;
+    height: 15px;
 }
 
 .success {
-    color: green;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 15px;
+    color: #2ecc71;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    font-size: 0.9rem;
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #6a5acd;
     color: white;
-    margin-top: 20px;
-    text-shadow: 1px 1px 3px #000;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #5a45d6;
 }
