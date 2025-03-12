@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Validation Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="header-image.jpg" alt="Header Image" class="header-img">
+            <h1>Welcome to the Validation Form</h1>
+            <p>Please fill in the form below with your details.</p>
+        </div>
+    </header>
+
+    <main>
+        <form id="validationForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="John Doe">
+            <small id="nameError" class="error"></small>
+
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" placeholder="example@example.com">
+            <small id="emailError" class="error"></small>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" placeholder="+254712345678">
+            <small id="phoneError" class="error"></small>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Minimum 8 characters">
+            <small id="passwordError" class="error"></small>
+
+            <button type="submit">Submit</button>
+            <p id="successMessage" class="success"></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Your Company. Beautifully crafted with ❤️.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
