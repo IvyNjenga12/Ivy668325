@@ -3,47 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Form Validation</title>
+    <title>Form Registration</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="form-container">
-        <h1>Register</h1>
-        <form id="registrationForm">
-            <div class="input-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter your full name">
-                <span class="error-message"></span>
-            </div>
-            
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email">
-                <span class="error-message"></span>
-            </div>
-            
-            <div class="input-group">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="Enter your phone number">
-                <span class="error-message"></span>
-            </div>
-            
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
-                <span class="error-message"></span>
-            </div>
 
+    <div class="form-container">
+        <h1>Form Registration</h1>
+        
+        <form id="registrationForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="eg John Doe">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="mame@email.com">
+
+            <label for="phone">Phone #:</label>
+            <input type="text" id="phone" placeholder="0712345678">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="At least 8 characters, including one uppercase letter, one 
+lowercase letter, and one number">
+            
             <button type="submit">Submit</button>
         </form>
-
-        <div id="successMessage" class="hidden">
-            <h2>Details Saved Successfully!</h2>
-            <p>Fill in the form again if needed.</p>
-            <button id="resetForm">New Form</button>
-        </div>
     </div>
-    
-    <script src="script.js"></script>
+
 </body>
+<script src="script.js"></script>
 </html>
