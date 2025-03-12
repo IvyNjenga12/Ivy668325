@@ -1,95 +1,92 @@
 /* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-* {
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Background with elegance */
-body {
     background: url('Background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    backdrop-filter: blur(5px); /* Adds a blur effect for better readability */
 }
 
-/* Centered container */
-.container {
+.form-container {
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    animation: fadeIn 0.8s ease-in-out;
+    width: 350px;
 }
 
-/* Form fields */
-.form-group {
-    margin-bottom: 15px;
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.input-group {
     text-align: left;
+    margin-bottom: 15px;
 }
 
-.form-group label {
+label {
     font-weight: 600;
     display: block;
     margin-bottom: 5px;
-    color: #333;
 }
 
-.form-group input {
+input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    transition: 0.3s;
 }
 
-.form-group input:focus {
-    border-color: #6a5acd;
-    box-shadow: 0 0 8px rgba(106, 90, 205, 0.5);
+input:focus {
+    border-color: #4CAF50;
     outline: none;
 }
 
-/* Error messages */
-.error {
-    color: #ff4d4d;
-    font-size: 12px;
-    margin-top: 5px;
-    height: 15px;
-}
-
-/* Submit button */
-.submit-btn {
+button {
     width: 100%;
-    padding: 10px;
-    border: none;
-    background: #6a5acd;
+    background: #4CAF50;
     color: white;
-    font-size: 18px;
+    padding: 12px;
+    border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.submit-btn:hover {
-    background: #5a45d6;
+button:hover {
+    background: #45a049;
 }
 
-/* Success message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+input.invalid {
+    border-color: red;
+}
+
 .hidden {
     display: none;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+#successMessage {
+    text-align: center;
+    padding: 20px;
+}
+
+#resetForm {
+    margin-top: 10px;
+    background: #007BFF;
 }
