@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email");
     const phone = document.getElementById("phone");
     const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
     const errorMessages = document.querySelectorAll(".error-message");
 
     // Function to show error message
@@ -37,11 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Function to validate password match
+    function validatePasswordMatch() {
+        if (password.value !== confirmPassword.value) {
+            showError(confirmPassword, "Passwords do not match");
+            return false;
+        } else {
+            clearError(confirmPassword);
+            return true;
+        }
+    }
+
     // Real-time validation while typing
     fullName.addEventListener("input", () => validateInput(fullName, nameRegex, "Only letters allowed"));
     email.addEventListener("input", () => validateInput(email, emailRegex, "Enter a valid email"));
     phone.addEventListener("input", () => validateInput(phone, phoneRegex, "Enter a valid phone number (10-15 digits)"));
     password.addEventListener("input", () => validateInput(password, passwordRegex, "Password must be 6+ characters, include letters & numbers"));
+    confirmPassword.addEventListener("input", validatePasswordMatch);
 
     // Form submission validation
     form.addEventListener("submit", function (event) {
@@ -51,8 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let isEmailValid = validateInput(email, emailRegex, "Enter a valid email");
         let isPhoneValid = validateInput(phone, phoneRegex, "Enter a valid phone number (10-15 digits)");
         let isPasswordValid = validateInput(password, passwordRegex, "Password must be 6+ characters, include letters & numbers");
+        let isConfirmPasswordValid = validatePasswordMatch();
 
-        if (isFullNameValid && isEmailValid && isPhoneValid && isPasswordValid) {
+        if (isFullNameValid && isEmailValid && isPhoneValid && isPasswordValid && isConfirmPasswordValid) {
             alert("✅ Details saved successfully!");
             form.reset(); // Clear form after successful submission
             errorMessages.forEach(error => (error.textContent = "")); // Remove all error messages
