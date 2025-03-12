@@ -20,4 +20,17 @@
 
 
  **Screenshots demostarting the form in action**
+ This is the display page when the link is clicked
  ![image](https://github.com/user-attachments/assets/b1b43bdf-32c3-4f32-967f-6aac1dd84f5e)
+ Inputing details using the correct format
+ ![image](https://github.com/user-attachments/assets/7d49e96c-911b-44bc-a8c8-44dac34a072e)
+ Submitting the form
+ ![image](https://github.com/user-attachments/assets/cfc773e3-a81e-4f9e-b790-cc0b07217837)
+ Reseting form after submitting; 
+ ![image](https://github.com/user-attachments/assets/bbd6d782-cb6a-4f9d-af22-77cb71016071)
+ Inputing details using wrong format
+ ![image](https://github.com/user-attachments/assets/a010e037-bee9-4cab-a125-2fd08a700410)
+
+
+
+
