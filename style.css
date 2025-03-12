@@ -1,4 +1,4 @@
-/* Apply background image */
+/* Background Image */
 body {
     background: url('Background.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -9,27 +9,30 @@ body {
     margin: 0;
 }
 
-/* Center the form */
+/* Form Container */
 .container {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid black; /* Added border as per sketch */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 350px;
     text-align: center;
 }
 
-/* Style form elements */
+/* Form Title */
 h2 {
     margin-bottom: 15px;
 }
 
+/* Labels */
 label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
 
+/* Input Fields */
 input {
     width: 100%;
     padding: 8px;
@@ -38,11 +41,12 @@ input {
     border-radius: 5px;
 }
 
-/* Error styling */
+/* Highlight input fields with errors */
 .error {
     border: 2px solid red;
 }
 
+/* Error Messages */
 .error-message {
     color: red;
     font-size: 12px;
@@ -50,9 +54,9 @@ input {
     text-align: left;
 }
 
-/* Submit button with hover effects */
+/* Submit Button */
 button {
-    background-color: #28a745;
+    background-color: #007bff;
     color: white;
     padding: 10px;
     border: none;
@@ -60,8 +64,11 @@ button {
     cursor: pointer;
     margin-top: 15px;
     width: 100%;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
