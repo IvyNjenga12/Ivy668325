@@ -1,4 +1,4 @@
-/* Importing a modern Google Font */
+/* Importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -10,7 +10,7 @@
 
 /* Background settings */
 body {
-    background: url('https://raw.githubusercontent.com/IvyNjenga12/Ivy668325/main/Background.jpg') no-repeat center center fixed;
+    background: url('Background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
     height: 100vh;
 }
 
-/* Styling the form container */
+/* Form container */
 .container {
     background: white;
     padding: 30px;
