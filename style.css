@@ -1,64 +1,67 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+/* Apply background image */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     background: url('Background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* Center the form */
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 350px;
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-weight: 600;
+/* Style form elements */
+h2 {
+    margin-bottom: 15px;
 }
 
 label {
-    font-weight: 600;
     display: block;
-    text-align: left;
-    margin: 10px 0 5px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
+    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
 
-input:focus {
-    border-color: #4CAF50;
-    outline: none;
+/* Error styling */
+.error {
+    border: 2px solid red;
 }
 
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* Submit button with hover effects */
 button {
-    width: 100%;
-    background: #4CAF50;
+    background-color: #28a745;
     color: white;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    margin-top: 15px;
+    width: 100%;
 }
 
 button:hover {
-    background: #45a049;
+    background-color: #218838;
 }
