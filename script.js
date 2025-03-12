@@ -1,51 +1,98 @@
-// Regular Expressions for validation
-const patterns = {
-    fullName: /^[a-zA-Z\s]+$/, // Only alphabets and spaces
-    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // Valid email address
-    phone: /^\d{10,15}$/, // Only digits, length 10-15
-    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/, // Minimum 8 characters with lowercase, uppercase, and digit
-};
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("validationForm");
 
-// Form elements
-const form = document.getElementById("validationForm");
-const inputs = document.querySelectorAll("input");
-const successMessage = document.getElementById("successMessage");
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const password = document.getElementById("password");
 
-// Validate individual fields
-function validateField(input, pattern) {
-    const errorField = document.getElementById(`${input.id}Error`);
-    if (!pattern.test(input.value)) {
-        errorField.innerText = `Invalid ${input.placeholder.toLowerCase()}`;
-        input.style.border = "2px solid red";
-        return false;
-    } else {
-        errorField.innerText = "";
-        input.style.border = "2px solid green";
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const passwordError = document.getElementById("passwordError");
+    const successMessage = document.getElementById("successMessage");
+
+    function validateName() {
+        const namePattern = /^[A-Za-z\s]+$/;
+        if (!fullName.value.match(namePattern)) {
+            nameError.textContent = "Only letters and spaces allowed.";
+            fullName.classList.add("invalid");
+            fullName.classList.remove("valid");
+            return false;
+        }
+        nameError.textContent = "";
+        fullName.classList.remove("invalid");
+        fullName.classList.add("valid");
         return true;
     }
-}
 
-// Real-time validation
-inputs.forEach(input => {
-    input.addEventListener("input", () => {
-        validateField(input, patterns[input.id]);
-    });
-});
+    function validateEmail() {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!email.value.match(emailPattern)) {
+            emailError.textContent = "Enter a valid email address.";
+            email.classList.add("invalid");
+            email.classList.remove("valid");
+            return false;
+        }
+        emailError.textContent = "";
+        email.classList.remove("invalid");
+        email.classList.add("valid");
+        return true;
+    }
 
-// On form submission
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let isValid = true;
+    function validatePhone() {
+        const phonePattern = /^[0-9]{10,15}$/;
+        if (!phone.value.match(phonePattern)) {
+            phoneError.textContent = "Phone number must be 10-15 digits.";
+            phone.classList.add("invalid");
+            phone.classList.remove("valid");
+            return false;
+        }
+        phoneError.textContent = "";
+        phone.classList.remove("invalid");
+        phone.classList.add("valid");
+        return true;
+    }
 
-    inputs.forEach(input => {
-        if (!validateField(input, patterns[input.id])) {
-            isValid = false;
+    function validatePassword() {
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if (!password.value.match(passwordPattern)) {
+            passwordError.textContent = "At least 8 chars, 1 uppercase, 1 lowercase, 1 number.";
+            password.classList.add("invalid");
+            password.classList.remove("valid");
+            return false;
+        }
+        passwordError.textContent = "";
+        password.classList.remove("invalid");
+        password.classList.add("valid");
+        return true;
+    }
+
+    // Real-time validation
+    fullName.addEventListener("input", validateName);
+    email.addEventListener("input", validateEmail);
+    phone.addEventListener("input", validatePhone);
+    password.addEventListener("input", validatePassword);
+
+    // Form submission event
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (validateName() & validateEmail() & validatePhone() & validatePassword()) {
+            successMessage.textContent = "✅ Form submitted successfully!";
+            successMessage.style.opacity = "1";
+
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                successMessage.style.opacity = "0";
+                form.reset();
+                fullName.classList.remove("valid");
+                email.classList.remove("valid");
+                phone.classList.remove("valid");
+                password.classList.remove("valid");
+            }, 2000);
+        } else {
+            successMessage.textContent = "";
         }
     });
-
-    if (isValid) {
-        successMessage.innerText = "Form submitted successfully!";
-    } else {
-        successMessage.innerText = "Please fix errors before submitting.";
-    }
 });
